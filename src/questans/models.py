@@ -5,16 +5,20 @@ from django.utils.text import slugify
 class Questions(models.Model):
     user = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE, null=True, blank=True)
     title = models.TextField()
+    description = models.TextField(null=True, blank=True)
     group = models.ForeignKey('QuestionGroups', on_delete=models.CASCADE, null=True, blank=True)
     created_on = models.DateTimeField(auto_now=True)
     updated_on = models.DateTimeField(auto_now_add=True)
-    slug = models.SlugField()
+    slug = models.SlugField(unique=True, null=True, blank=True)
 
     def save(self, *args, **kwargs):
         self.slug = slugify(self.title)
         super(Questions, self).save(*args, **kwargs)
 
     def __unicode__(self):
+        return self.title
+
+    def __str__(self):
         return self.title
 
 
@@ -32,4 +36,6 @@ class QuestionGroups(models.Model):
     name = models.CharField(max_length=100)
 
     def __unicode__(self):
+        return self.name
+    def __str__(self):
         return self.name

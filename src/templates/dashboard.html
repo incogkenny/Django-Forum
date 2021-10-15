@@ -1,3 +1,6 @@
+{% extends "base.html" %}
+<body>
+{% block content%}
 <a href='{% url "logout-view" %}'>Logout</a>
 Welcome,
 {{userdetail.username}}
@@ -12,3 +15,5 @@ Answers.
 {% for answer in answers %}
 <li>{{answer.answer_text}} by {{answer.user.username}} </li>
 {% endfor %}
+{% endblock %}
+</body>
