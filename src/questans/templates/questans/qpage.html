@@ -1,0 +1,42 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class = "container">
+
+<div class="card mb-3" style="max-width: 1000px;">
+  <div class="row g-0">
+    <div class="col-md-4">
+      <button><i onclick="{{q.points.upvote}}" class="fas fa-chevron-up fa-3x"></i></button>
+      <h1 class="center-align">{{q.points}}</h1>
+      <button><i onclick="{{q.points.downvote}}" class="fas fa-chevron-down fa-3x"></i></button>
+    </div>
+    <div class="col-md-8">
+      <div class="card-body">
+        <h5 class="card-title">{{q.title}}</h5>
+        <p class="card-text"><small class="text-muted">User: {{q.user}}</small></p>
+        <p class="card-text">{{q.description}}</p>
+        <p class="card-text"><small class="text-muted">{{q.group}}</small></p>
+        <p class="card-text"><small class="text-muted">{{q.created_on}}</small></p>
+        <p class="card-text"><small class="text-muted">{{q.updated_on}}</small></p>
+      </div>
+    </div>
+  </div>
+</div>
+  {% for a in answers %}
+  <div class="card mb-3" style="max-width: 1000px;">
+  <div class="row g-0">
+    <div class="col-md-4">
+
+    </div>
+    <div class="col-md-8">
+      <div class="card-body">
+        <h5 class="card-title">{{a.user}}</h5>
+        <p class="card-text">{{a.answer_text}}</p>
+      </div>
+    </div>
+  </div>
+    {% endfor %}
+</div>
+
+  </div>
+{% endblock %}

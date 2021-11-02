@@ -6,6 +6,7 @@ class Questions(models.Model):
     user = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE, null=True, blank=True)
     title = models.TextField()
     description = models.TextField(null=True, blank=True)
+    points = models.IntegerField(default=0)
     group = models.ForeignKey('QuestionGroups', on_delete=models.CASCADE, null=True, blank=True)
     created_on = models.DateTimeField(auto_now=True)
     updated_on = models.DateTimeField(auto_now_add=True)
@@ -14,6 +15,14 @@ class Questions(models.Model):
     def save(self, *args, **kwargs):
         self.slug = slugify(self.title)
         super(Questions, self).save(*args, **kwargs)
+
+    def upvote(self):
+        self.points = self.points+1
+        return self.points
+
+    def downvote(self):
+        self.points = self.points-1
+        return self.points
 
     def __unicode__(self):
         return self.title

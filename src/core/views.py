@@ -19,7 +19,7 @@ class DashboardView(FormView):
         if request.user.is_authenticated:
             user = request.user
             user.backend = 'django.contrib.core.backends.ModelBackend'
-            ques_obj = Questions.objects.filter(user=user)
+            ques_obj = Questions.objects.all()
             content['userdetail'] = user
             content['questions'] = ques_obj
             ans_obj = Answers.objects.filter(question=ques_obj.first())
@@ -35,11 +35,13 @@ class RegisterView(FormView):
     def dispatch(self, request, *args, **kwargs):
         return super(RegisterView, self).dispatch(request, *args, **kwargs)
 
+    # Method that retrieves user data from database and renders it (GET)
     def get(self, request):
         content = {}
         content['form'] = RegisterForm
         return render(request, 'register.html', content)
 
+    # Method that adds new user data entered from register page to database but also checks if it's valid (form.is.valid)
     def post(self, request):
         content = {}
         form = RegisterForm(request.POST, request.FILES or None)
@@ -63,6 +65,7 @@ class LoginView(FormView):
     def dispatch(self, request, *args, **kwargs):
         return super(LoginView, self).dispatch(request, *args, **kwargs)
 
+    # Method that retrieves user data from database and renders it (GET)
     def get(self, request):
         content = {}
         if request.user.is_authenticated:
