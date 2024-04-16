@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+{% load crispy_forms_tags %}
+{% block content %}
+
+<head>
+    <title>Form</title>
+</head>
+
+<body>
+<!-- Displays the Form--->
+<div class="container mb-3">
+    <h1 class="display-1">Question Form</h1>
+<h4 class="lead display-7">Create Your Own Question</h4>
+<form action="" method="POST">
+{% csrf_token %}
+    <table>
+        {{ form|crispy }}
+    </table>
+    <br>
+    <input type="submit" class="btn btn-primary btn-block mb-2 rounded-pill shadow-sm" name="question_form" value="Submit" />
+</form>
+</div>
+</body>
+
+{% endblock content %}

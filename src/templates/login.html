@@ -1,51 +1,40 @@
 {% extends "base.html" %}
-
+{% load crispy_forms_tags %}
+<!-- crispy_forms is a library that has css for modern looking forms -->
 
 {% block content %}
 <head>
     <title>Login</title>
-    <style>
-        .bg-image {
-            background-image: url("https://unsplash.com/photos/6RpCrK8nAxk/download?ixid=MnwxMjA3fDB8MXxzZWFyY2h8NHx8bGVhdmVzJTIwYmFja2dyb3VuZHx8MHx8fHwxNjM0NTU5Njc2&force=true&w=640");
-            background-size: cover;
-            background-position: center center;
-}
-    </style>
-</head>
-
-
-<div class="container-fluid">
-    <div class="row no-gutter my-auto">
-        <!-- The image half -->
-        <div class="col-md-6 d-none d-md-flex bg-image"></div>
-
-
-        <!-- The content half -->
-        <div class="col-md-6 bg-light">
+<body>
+        <div class="bg-light">
             <div class="login d-flex align-items-center py-5">
 
-                <!-- Demo content-->
+
                 <div class="container">
                     <div class="row">
                         <div class="col-lg-10 col-xl-7 mx-auto">
-                            <h3 class="display-4">Login page</h3>
-                            <p class="text-muted mb-4">Please enter your login details:</p>
+                            <h3 class="display-4">Login</h3>
+                            <p class="text-muted mb-4">Please enter your details:</p>
                             <form action="" method="POST">
-                                 {% csrf_token %}
+                            {% csrf_token %}
                                 <table>
-                                    {{ form.as_table }}
+                                    {{ form|crispy }} <!-- Formats form with crispy_forms library-->
                                 </table>
-                                <input type="submit" class="btn btn-primary btn-block text-uppercase mb-2 rounded-pill shadow-sm" name="login" value="Sign In" />
+                                <br>
+                                <input type="submit" class="btn btn-primary btn-block mb-2 rounded-pill shadow-sm" name="register" value="Login" />
                             </form>
-
                         </div>
                     </div>
-                </div><!-- End -->
+                </div>
 
             </div>
-        </div><!-- End -->
+        </div>
 
     </div>
 </div>
+
+
+
+</body>
 
 {% endblock%}

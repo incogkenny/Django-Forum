@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="container text-center">
+    <h1 class="display-3">Your Form was successfully submitted</h1>
+    <img class="img-fluid" src="https://c.tenor.com/Oj2nKJiZSU4AAAAC/celebration-will-smith.gif" style="width: 700px; height: auto">
+    <br>
+    <br>
+    <a href="{% url 'questions_list'%}" class="btn btn-success display-4" style="font-size:30px;">Go Home to see your question</a>
+</div>
+
+{% endblock %}

@@ -10,6 +10,7 @@ from django.contrib.auth.hashers import make_password
 from .models import User
 from questans.models import Questions, Answers, QuestionGroups
 from .forms import LoginForm, RegisterForm
+from questans.views import questions_list
 
 
 class DashboardView(FormView):
@@ -39,6 +40,7 @@ class RegisterView(FormView):
     def get(self, request):
         content = {}
         content['form'] = RegisterForm
+        print(content)
         return render(request, 'register.html', content)
 
     # Method that adds new user data entered from register page to database but also checks if it's valid (form.is.valid)
@@ -50,7 +52,7 @@ class RegisterView(FormView):
             save_it.password = make_password(form.cleaned_data['password'])
             save_it.save()
             login(request, save_it)
-            return redirect(reverse('dashboard-view'))
+            return redirect(reverse('questions_list'))
         content['form'] = form
         template = 'register.html'
         return render(request, template, content)
@@ -69,10 +71,10 @@ class LoginView(FormView):
     def get(self, request):
         content = {}
         if request.user.is_authenticated:
-            return redirect(reverse('dashboard-view'))
+            return redirect('questions_list')
         content['form'] = LoginForm
         return render(request, 'login.html', content)
-
+    # Method that sends login details to database to be checked if they match a user
     def post(self, request):
         content = {}
         email = request.POST['email']
@@ -81,7 +83,7 @@ class LoginView(FormView):
             users = User.objects.filter(email=email)
             user = authenticate(request, username=users.first().username, password=password)
             login(request, user)
-            return redirect(reverse('dashboard-view'))
+            return redirect('/')
         except Exception as e:
             content = {}
             content['form'] = LoginForm

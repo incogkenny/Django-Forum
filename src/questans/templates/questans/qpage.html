@@ -1,8 +1,9 @@
 {% extends "base.html" %}
-
+{% load crispy_forms_tags %}
 {% block content %}
 <div class = "container">
 
+  <!-- Renders Question card-->
 <div class="card mb-3" style="max-width: 1000px;">
   <div class="row g-0">
     <div class="col-md-4">
@@ -12,17 +13,19 @@
     </div>
     <div class="col-md-8">
       <div class="card-body">
-        <h5 class="card-title">{{q.title}}</h5>
-        <p class="card-text"><small class="text-muted">User: {{q.user}}</small></p>
+        <h5 class="card-title display-3">{{q.title}}</h5>
+        <p class="card-text"><small class="text-muted">{{q.user}}</small></p>
         <p class="card-text">{{q.description}}</p>
         <p class="card-text"><small class="text-muted">{{q.group}}</small></p>
-        <p class="card-text"><small class="text-muted">{{q.created_on}}</small></p>
-        <p class="card-text"><small class="text-muted">{{q.updated_on}}</small></p>
+        <p class="card-text"><small class="text-muted">Created on: {{q.created_on}}</small></p>
       </div>
     </div>
   </div>
+
+<!-- Renders Answers-->
 </div>
-  {% for a in answers %}
+  <h2 class="text-success display-5">Answers</h2>
+  {% for answer in a %}
   <div class="card mb-3" style="max-width: 1000px;">
   <div class="row g-0">
     <div class="col-md-4">
@@ -30,13 +33,24 @@
     </div>
     <div class="col-md-8">
       <div class="card-body">
-        <h5 class="card-title">{{a.user}}</h5>
-        <p class="card-text">{{a.answer_text}}</p>
+        <h5 class="card-title">User: {{answer.user}}</h5>
+        <p class="card-text">{{answer.answer}}</p>
       </div>
     </div>
   </div>
     {% endfor %}
-</div>
 
+    <!-- HTML for Answer form-->
   </div>
-{% endblock %}
+<div class="container">
+  <h3 class="display-7">Comment on Post:</h3>
+<form action="" method="POST">
+{% csrf_token %}
+    <table>
+        {{ form|crispy }}
+    </table>
+    <br>
+    <input type="submit" class="btn btn-primary btn-block mb-2 rounded-pill shadow-sm" name="questions_page" value="Submit" />
+</form>
+</div>
+  {% endblock %}

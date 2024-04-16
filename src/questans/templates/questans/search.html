@@ -1,0 +1,53 @@
+{% extends "base.html" %}
+
+{% block content %}
+<head>
+  <title>Questions</title>
+
+  <style>
+    .card-columns {
+  @include media-breakpoint-only(lg) {
+    column-count: 4;
+  }
+  @include media-breakpoint-only(xl) {
+    column-count: 5;
+  }
+}
+  </style>
+
+</head>
+<div class = "container">
+
+<br/>
+<h1 class="display-2">Search Result</h1>
+<br/>
+  {% if searched %}
+    <h3>You Searched for '{{searched}}'</h3>
+</div>
+
+<div class="card-column">
+
+    {% for q in topics %}
+<div class="container">
+  <div class="card" style="width: 18rem;">
+    <a href="{% url 'questions_page' q.slug%}">
+  <img src="https://scitechdaily.com/images/DNA-Change-Concept.gif" class="card-img-top" alt="DNA image">
+    </a>
+  <div class="card-body">
+    <h5 class="card-title">{{q.title}}</h5>
+    <p class="card-text">{{q.description}}</p>
+    <a href="{% url 'questions_page' q.slug%}" class="btn btn-success">Go to {{q.title}}</a>
+  </div>
+</div>
+</div>
+
+
+{% endfor %}
+
+</div>
+
+{% else %}
+    <h3>Hey you forgot to search a Topic!</h3>
+{% endif %}
+
+{% endblock %}

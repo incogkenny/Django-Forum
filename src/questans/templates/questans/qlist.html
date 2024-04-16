@@ -1,27 +1,60 @@
 {% extends "base.html" %}
-
+{% load static %}
 {% block content %}
+<head>
+  <title>Home</title>
 
+<style>
+         .btn-grad {background-image: linear-gradient(to right, #43cea2 0%, #185a9d  51%, #43cea2  100%)}
+         .btn-grad {
+            margin: 10px;
+            padding: 15px 45px;
+            text-align: center;
+            font-size: 40px;
+            font-family: "Calibri Light";
+            text-transform: uppercase;
+            transition: 0.5s;
+            background-size: 200% auto;
+            color: white;
+            box-shadow: 0 0 20px #eee;
+            border-radius: 10px;
+            display: block;
+          }
+
+          .btn-grad:hover {
+            background-position: right center; /* change the direction of the change here */
+            color: #fff;
+            text-decoration: none;
+          }
+  </style>
+</head>
 <div class = "container">
   <a href='{% url "logout-view" %}'>Logout</a>
-Welcome,User
-{{userdetail.username}}
+Welcome {{userdetail.username}} <!-- Displays users name if logged in-->
 <br/>
-Asked Questions.
+  <h4 class="display-4 text-success">Asked Questions:</h4>
 <br/>
-{% for q in questions%}
-<div class="card mb-3" style="max-width: 1000px;">
-  <div class="row g-0">
-    <div class="col-md-4">
+  <div classs="container">
 
+  <a href="{% url 'question_form' %}" class="btn btn-grad">Create Your Own Question</a>
+</div>
+<br>
+
+  <!-- Loops through all of the questions within the database-->
+{% for q in questions %} <!-- Same questions variable from the Homepage view-->
+<div class="card mb-3" style="max-width: 1500px;">
+  <div class="row g-0">
+    <div class="col-md-4 pb-0 mb-0">
+      <a href="{% url 'questions_page' q.slug%}"><img src="{% static 'questionbox.png'%}" style="width:416px; height:283px"></a>
+<!-- Then displays a card showing each question showing different fields within the question class-->
     </div>
     <div class="col-md-8">
       <div class="card-body">
-        <h5 class="card-title">{{q.title}}</h5>
-        <p class="card-text">{{q.description}}</p>
-        <p class="card-text"><small class="text-muted">{{q.group}}</small></p>
-        <p class="card-text"><small class="text-muted">{{q.created_on}}</small></p>
-        <p class="card-text"><small class="text-muted">{{q.updated_on}}</small></p>
+        <h5 class="card-title display-6">{{q.title}}</h5>
+        <p class="card-text lead">{{q.description}}</p>
+        <p class="card-text"><small class="text-muted">{{q.group}}, User: {{q.user}}</small></p>
+        <p class="card-text"><small class="text-muted">Created: {{q.created_on}}</small></p>
+        <p class="card-text"><small class="text-muted">Last active: {{q.updated_on}}</small></p>
         <a href="{% url 'questions_page' q.slug%}" class="btn btn-success">Go to {{q.title}}</a>
       </div>
     </div>
@@ -29,4 +62,7 @@ Asked Questions.
 </div>
 {% endfor %}
   </div>
+
+
+
 {% endblock %}

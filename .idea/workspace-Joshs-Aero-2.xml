@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="0459772e-0af1-441c-8cac-820db2997bc9" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/src/questans/forms.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/questans/templates/questans/qform.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/questans/templates/questans/search.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/static/questionbox.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/templates/contact.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/templates/help.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/core/forms.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/core/forms.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/core/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/core/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/src/db.sqlite3" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/questans/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/questans/admin.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/questans/templates/questans/qlist.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/questans/templates/questans/qlist.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/questans/templates/questans/qpage.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/questans/templates/questans/qpage.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/questans/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/questans/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/questans/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/questans/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/src/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/src/settings.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/templates/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/templates/base.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/templates/register.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/templates/register.html" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="HTML File" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProjectId" id="1ypWFzRQipUeDaIDZbjY8yoDUou" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
+    <property name="ASKED_SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="DefaultHtmlFileTemplate" value="HTML File" />
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="com.intellij.ide.scratch.LRUPopupBuilder$1/Change SQL Dialect" value="SQLite" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.detected.package.tslint" value="true" />
+    <property name="node.js.selected.package.eslint" value="(autodetect)" />
+    <property name="node.js.selected.package.tslint" value="(autodetect)" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\josh0\OneDrive\Documents\Dev\Coursework\coursework\src\questans\templates" />
+    </key>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="0459772e-0af1-441c-8cac-820db2997bc9" name="Changes" comment="" />
+      <created>1632948911277</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1632948911277</updated>
+      <workItem from="1632948912866" duration="399000" />
+      <workItem from="1632949393236" duration="2793000" />
+      <workItem from="1633022001191" duration="3373000" />
+      <workItem from="1633638390629" duration="63000" />
+      <workItem from="1633638508923" duration="272000" />
+      <workItem from="1633638872718" duration="598000" />
+      <workItem from="1633639650804" duration="3149000" />
+      <workItem from="1633643488911" duration="114000" />
+      <workItem from="1633962748653" duration="631000" />
+      <workItem from="1634303277308" duration="11844000" />
+      <workItem from="1634565007645" duration="8567000" />
+      <workItem from="1634826388277" duration="3180000" />
+      <workItem from="1635193997623" duration="1090000" />
+      <workItem from="1635195160171" duration="8785000" />
+      <workItem from="1635546817537" duration="4989000" />
+      <workItem from="1635889506167" duration="1320000" />
+      <workItem from="1635933155828" duration="7022000" />
+      <workItem from="1636056018271" duration="6493000" />
+      <workItem from="1638195450102" duration="6355000" />
+      <workItem from="1638800480895" duration="2063000" />
+      <workItem from="1639061679904" duration="2695000" />
+      <workItem from="1639408742462" duration="5291000" />
+      <workItem from="1642084049315" duration="2586000" />
+      <workItem from="1642160148036" duration="1807000" />
+      <workItem from="1642429540046" duration="1890000" />
+      <workItem from="1642541356228" duration="1998000" />
+      <workItem from="1642544175364" duration="109000" />
+      <workItem from="1642544380014" duration="799000" />
+      <workItem from="1642586116098" duration="711000" />
+      <workItem from="1642687963320" duration="3296000" />
+      <workItem from="1642763858000" duration="4708000" />
+      <workItem from="1643033282293" duration="4850000" />
+      <workItem from="1643038424590" duration="187000" />
+    </task>
+    <task id="LOCAL-00001" summary="Adding questans app, changed register and login views">
+      <created>1633643079571</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1633643079571</updated>
+    </task>
+    <task id="LOCAL-00002" summary="Adding questans app, changed register and login views">
+      <created>1634338482215</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1634338482215</updated>
+    </task>
+    <task id="LOCAL-00003" summary="started to add bootstrap">
+      <created>1634338748973</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1634338748973</updated>
+    </task>
+    <task id="LOCAL-00004" summary="made alterations to templates to change css">
+      <created>1635890791056</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1635890791056</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="CHECK_NEW_TODO" value="false" />
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
+    <MESSAGE value="Adding questans app, changed register and login views" />
+    <MESSAGE value="started to add bootstrap" />
+    <MESSAGE value="made alterations to templates to change css" />
+    <option name="LAST_COMMIT_MESSAGE" value="made alterations to templates to change css" />
+  </component>
+</project>

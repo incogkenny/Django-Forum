@@ -1,16 +1,19 @@
 {% load static %}
+{% load crispy_forms_tags %}
 <html lang="en">
 <head>
+
     <script src="https://kit.fontawesome.com/5b37020b31.js" crossorigin="anonymous"></script>
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
 </head>
 
 <body>
-<!-- Navigation -->
+<!-- Navbar -->
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark static-top">
   <div class="container">
-    <a class="navbar-brand" href="{% url 'questions-list'%}">
-      <img src="{% static 'logo.png' %}" alt="logo" height="36">
+    <!-- Displays Logo with the website name "Biochat". It also links to the homepage-->
+    <a class="navbar-brand" href="{% url 'questions_list'%}">
+      <img src="{% static 'logo3.png' %}" alt="logo" height="50">
       BioChat
     </a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -18,15 +21,20 @@
     </button>
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav ms-auto">
+        <!-- Makes list of Navbar items-->
         <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="{% url 'questions-list'%}">Home</a>
+          <!-- Creates "Home" button-->
+          <a class="nav-link active" aria-current="page" href="{% url 'questions_list'%}">Home</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">Help</a>
+          <!-- Creates "Help" button-->
+          <a class="nav-link" href="{% url 'help_view'%}">Help</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">Contact</a>
+          <!-- Creates "Contact" button-->
+          <a class="nav-link" href="{% url 'contact_view'%}">Contact</a>
         </li>
+        <!-- Creates dropdown menu called "Topics" that has different links to other pages -->
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
             Topics
@@ -40,16 +48,30 @@
             <li><a class="dropdown-item" href="#">Something else here</a></li>
           </ul>
         </li>
+        <!-- Creates "Login" button -->
           <li class="nav-item">
           <a class="nav-link" href="{% url 'login-view'%}">Login</a>
+        <!-- Creates "Signup" button-->
         </li>
         <li class="nav-item">
-          <a class="nav-link bg-dark bg-gradient" href="{% url 'register-view'%}">Sign Up</a>
+          <a class="nav-link" href="{% url 'register-view'%}">Sign Up</a>
         </li>
+        <li class="nav-item">
+          <a></a>
+        </li>
+
+        <!-- Creates Search bar -->
+
+       <form class="d-flex" style=" height:41px; padding:0;" action="{% url 'search_view'%}" method="POST"> <!-- This method tag was missed out making the search_view function useless-->
+         {% csrf_token %} <!-- This token was also added to protect against hackers-->
+        <input class="form-control me-2" type="search" placeholder="Search Topics" aria-label="Search" name="searched">
+        <button class="btn btn-outline-success" type="submit">Search</button>
+      </form>
       </ul>
     </div>
   </div>
 </nav>
+
 {% block content %}
 
 
@@ -57,5 +79,8 @@
 {% endblock %}
 <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js" integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js" integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13" crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
 </body>
 </html>

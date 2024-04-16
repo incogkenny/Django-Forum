@@ -12,6 +12,10 @@ class QuestionsAdmin(admin.ModelAdmin):
     class Meta:
         model = Questions
 
+class AnswersAdmin(admin.ModelAdmin):
+    class Meta:
+        models = Answers
+
 
 class QuestionGroupsAdmin(admin.ModelAdmin):
 
@@ -20,3 +24,4 @@ class QuestionGroupsAdmin(admin.ModelAdmin):
 
 admin.site.register(Questions, QuestionsAdmin)
 admin.site.register(QuestionGroups, QuestionGroupsAdmin)
+admin.site.register(Answers, AnswersAdmin)
