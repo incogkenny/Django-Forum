@@ -47,3 +47,6 @@ To run Django Forum locally, follow these steps:
 - Explore the existing forum categories or create your own.
 - Start new discussion threads or participate in existing ones by commenting.
 - Administrators can manage users, threads, and comments through the admin interface.
+
+## Documentation
+[Here's a link to the documentation](Forum%20Documentation.pdf)
