@@ -3,6 +3,8 @@
 This project is a web application built with Django, a high-level Python web framework, aimed at providing a platform
 for discussions and interactions involving Biology among users.
 
+![Dashboard image](img.png)
+
 ## Features
 
 - User authentication: Users can sign up, log in, and manage their accounts.
