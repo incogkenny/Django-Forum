@@ -3,7 +3,6 @@ from .models import Questions, Answers, QuestionGroups, QGroups
 
 
 class QuestionForm(forms.ModelForm):
-
     title = forms.CharField(max_length=90, required=True)
     description = forms.CharField(required=True, widget=forms.Textarea())
 
@@ -11,10 +10,7 @@ class QuestionForm(forms.ModelForm):
         # Inherits data and fields from the 'Questions' model class
         model = Questions
         # The fields that will be displayed in the form
-        fields = [ 'title', 'description', 'group']
-
-
-
+        fields = ['title', 'description', 'group']
 
 
 class AnswerForm(forms.ModelForm):
